@@ -29,7 +29,7 @@
  * Instead noting and sending back to the last visited map, or copy-pasting that shop, you can just use this plugin.
  * I suggest you to start with LastDoor plugin if you are worried about setting this one up.
  * 
- * Script Commands:
+ * Plugin Commands:
  * - Save teleport
  * "Name" is the alias you will use to teleport later. If it's already there, it will be updated to the new info. It must start by a letter!
  * "Type" is 0 if you want to set the location specifically, any other number if you want to use variables
@@ -37,12 +37,18 @@
  * "Direction" is where the character will face. 1 for down, 2 for left, 3 for right, 4 for up. 0 is "retain".
  * Trasition is the effect to apply on this transfer, 0 for black screen, 1 for white screen, any other for no effect.
  * 
+ * 
  * If you don't set "Type", "Direction" and "Transition", they will be set to 0!
  * Also, if you only type the Name, Map, X and Y will be set to current location.
  * 
  * - Transfer
  * This only contains one argument, "Name". Name is the name you declared when you used save. Make sure the player runs "save" first!
  * 
+ * 
+ * 
+ * Script calls:
+ * $gamePlayer.ME_savedTeleports.has("name")
+ * Checks if "name" was saved or not. Keep the quotation marks.
  * 
  * ==============================================
  * @Terms of use
