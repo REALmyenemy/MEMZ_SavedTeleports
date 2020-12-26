@@ -84,12 +84,6 @@ PluginManager.registerCommand("ME_SavedTeleports","save",args => {
 		var y=parseInt(args["Y"]||$gamePlayer._y);
 		var direction=parseInt(args["Direction"])||0;
 		var transition=args["Transition"]||0;
-		console.log(name)
-		console.log(type)
-		console.log(x)
-		console.log(y)
-		console.log(direction)
-		console.log(transition)
 		
 		$gamePlayer.ME_savedTeleports.set(name,[type,map,x,y,direction,transition]);		
 	}
@@ -105,7 +99,6 @@ PluginManager.registerCommand("ME_SavedTeleports","transfer",args => {
 			if ($gamePlayer.ME_savedTeleports.has(name))
 			{
 				var params=$gamePlayer.ME_savedTeleports.get(args["Name"]);
-				console.log(params)
 			
 				return Game_Interpreter.prototype.command201(params);
 			}
