@@ -1,9 +1,9 @@
 /*:
  * Version 1.0.0
  * @target MZ
- * Last update 26/12/20
+ * Last update 18/03/21
  * @author myenemy
- * @plugindesc You can go back to the entrance you came from
+ * @plugindesc Name teleports to use them later!
  * 
  * @command save
  * @text Save Teleport
@@ -20,6 +20,14 @@
  * @text Transfer
  * @arg Name
  * @desc Sends the player to saved location by name
+ * 
+ * @command link
+ * @text Link transfer
+ * @arg Name
+ * 
+ * @command return
+ * @text Link return
+ * @arg Name
  * 
  * 
  * @help
@@ -44,6 +52,11 @@
  * - Transfer
  * This only contains one argument, "Name". Name is the name you declared when you used save. Make sure the player runs "save" first!
  * 
+ * - Link transfer
+ * Saves a return point to return with Link return, and transfers the player. This will overwrite previous Link Transfer with the same name.
+ * 
+ * - Link return
+ * Returns the player to the last spot Link transfer was used
  * 
  * 
  * Script calls:
@@ -79,7 +92,6 @@
  Game_Player.prototype.ME_savedTeleports=new Map();
 
 PluginManager.registerCommand("ME_SavedTeleports","save",args => {
-	
 	if (args&&args["Name"]&&!args["Name"].match(/^\d/))
 	{
 		var name=args["Name"];
@@ -87,13 +99,14 @@ PluginManager.registerCommand("ME_SavedTeleports","save",args => {
 		var type=parseInt(args["Type"])||0;
 		var map=parseInt(args["Map"])||$gameMap._mapId;
 		var x=parseInt(args["X"])||$gamePlayer._x;
-		var y=parseInt(args["Y"]||$gamePlayer._y);
+		var y=parseInt(args["Y"])||$gamePlayer._y;
 		var direction=parseInt(args["Direction"])||0;
 		var transition=args["Transition"]||0;
 		
 		$gamePlayer.ME_savedTeleports.set(name,[type,map,x,y,direction,transition]);		
 	}
 });
+
 
 PluginManager.registerCommand("ME_SavedTeleports","transfer",args => {
 	
@@ -102,6 +115,46 @@ PluginManager.registerCommand("ME_SavedTeleports","transfer",args => {
 		var name= args["Name"];
 		if (name&&!name.match(/^\d/))
 		{
+			if ($gamePlayer.ME_savedTeleports.has(name))
+			{
+				var params=$gamePlayer.ME_savedTeleports.get(args["Name"]);
+			
+				return Game_Interpreter.prototype.command201(params);
+			}
+		}
+	}
+	return false;
+});
+
+PluginManager.registerCommand("ME_SavedTeleports","link",args => {
+	
+	if (args&&args["Name"]&&!args["Name"].match(/^\d/))
+	{
+		var name=args["Name"];
+		var params=$gamePlayer.ME_savedTeleports.get(name);
+
+		var type=0;
+		var map=$gameMap._mapId;
+		var x=$gamePlayer._x;
+		var y=$gamePlayer._y;
+		var direction=$gamePlayer.direction()||0;
+		var transition=params[5]||2;
+		
+		$gamePlayer.ME_savedTeleports.set("return_"+name,[type,map,x,y,direction,transition]);
+		return Game_Interpreter.prototype.command201(params);
+	}
+	return false;
+});
+
+PluginManager.registerCommand("ME_SavedTeleports","return",args => {
+	
+	if (args)
+	{
+		var name= args["Name"];
+		if (name&&!name.match(/^\d/))
+		{
+			name="return_"+name;
+
 			if ($gamePlayer.ME_savedTeleports.has(name))
 			{
 				var params=$gamePlayer.ME_savedTeleports.get(args["Name"]);
