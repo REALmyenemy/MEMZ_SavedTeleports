@@ -4,5 +4,10 @@ null,
 {"id":2,"expanded":false,"name":"B","order":2,"parentId":0,"scrollX":0,"scrollY":0},
 {"id":3,"expanded":false,"name":"C","order":3,"parentId":0,"scrollX":0,"scrollY":0},
 {"id":4,"expanded":false,"name":"D","order":4,"parentId":0,"scrollX":0,"scrollY":0},
-{"id":5,"expanded":false,"name":"Link Transfer","order":5,"parentId":0,"scrollX":0,"scrollY":0}
+{"id":5,"expanded":false,"name":"Link Transfer","order":5,"parentId":0,"scrollX":866.6666666666666,"scrollY":494},
+{"id":6,"expanded":false,"name":"Normal Town","order":6,"parentId":0,"scrollX":866.6666666666666,"scrollY":840.6666666666666},
+{"id":7,"expanded":false,"name":"Forest Town","order":7,"parentId":0,"scrollX":866.6666666666666,"scrollY":974},
+{"id":8,"expanded":false,"name":"Abandoned Town","order":8,"parentId":0,"scrollX":866.6666666666666,"scrollY":1267.3333333333333},
+{"id":9,"expanded":false,"name":"Castle 1F","order":9,"parentId":0,"scrollX":866.6666666666666,"scrollY":494},
+{"id":10,"expanded":false,"name":"Nomad Camp","order":10,"parentId":0,"scrollX":866.6666666666666,"scrollY":706}
 ]
