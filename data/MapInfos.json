@@ -1,14 +1,14 @@
 [
 null,
-{"id":1,"expanded":false,"name":"A","order":1,"parentId":0,"scrollX":0,"scrollY":0},
-{"id":2,"expanded":true,"name":"Save and Teleport","order":4,"parentId":0,"scrollX":1300,"scrollY":741},
-{"id":3,"expanded":false,"name":"C","order":2,"parentId":0,"scrollX":1300,"scrollY":741},
-{"id":4,"expanded":false,"name":"D","order":3,"parentId":0,"scrollX":0,"scrollY":0},
-{"id":5,"expanded":true,"name":"Link Transfer","order":9,"parentId":0,"scrollX":1300,"scrollY":741},
-{"id":6,"expanded":false,"name":"Normal Town","order":5,"parentId":2,"scrollX":1300,"scrollY":841},
-{"id":7,"expanded":false,"name":"Abandoned House","order":7,"parentId":8,"scrollX":1300,"scrollY":741},
-{"id":8,"expanded":true,"name":"Abandoned Town","order":6,"parentId":2,"scrollX":1300,"scrollY":1007},
-{"id":9,"expanded":false,"name":"Castle 1F","order":10,"parentId":5,"scrollX":866.6666666666666,"scrollY":494},
-{"id":10,"expanded":false,"name":"Nomad Camp","order":11,"parentId":5,"scrollX":866.6666666666666,"scrollY":706},
-{"id":11,"expanded":false,"name":"Dungeon","order":8,"parentId":2,"scrollX":1950,"scrollY":1111.5}
+{"id":1,"expanded":false,"name":"Abandoned House","order":4,"parentId":8,"scrollX":988.5,"scrollY":586.5},
+{"id":2,"expanded":true,"name":"--Save and Teleport--","order":1,"parentId":0,"scrollX":1300,"scrollY":741},
+null,
+null,
+{"id":5,"expanded":true,"name":"--Link Transfer--","order":6,"parentId":0,"scrollX":816,"scrollY":624},
+{"id":6,"expanded":false,"name":"Normal Town","order":2,"parentId":0,"scrollX":848,"scrollY":842},
+null,
+{"id":8,"expanded":true,"name":"Abandoned Town","order":3,"parentId":0,"scrollX":988.5,"scrollY":856.5},
+{"id":9,"expanded":false,"name":"Castle 1F","order":7,"parentId":0,"scrollX":866,"scrollY":640},
+{"id":10,"expanded":false,"name":"Nomad Camp","order":8,"parentId":0,"scrollX":866.6666666666666,"scrollY":706},
+{"id":11,"expanded":false,"name":"Dungeon","order":5,"parentId":0,"scrollX":1411.5,"scrollY":1111.5}
 ]
