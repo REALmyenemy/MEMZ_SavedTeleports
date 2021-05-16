@@ -82,7 +82,7 @@
  * @Terms of redistribution and disambiguation
  * - You must include a link to the original RPG Maker Forums Post plugin.
  * - You can add terms to it, but you can't remove or modify the ones already existent.
- * - You must follow LGPL 3.0.
+ * - You must follow LGPL 3.0 about this plugin.
  *
  * ==============================================
  *
